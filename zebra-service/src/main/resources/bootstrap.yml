@@ -1,0 +1,32 @@
+server.port: 11118
+spring:
+  application:
+    name: zebra-service
+  cloud:
+    config:
+      uri: http://localhost:8080/conf
+      label: alpha
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&autoReconnect=true&serverTimezone=GMT
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 20
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+mybatis-plus:
+  mapper-locations:  classpath:com/dbses/service/dao/xml/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      # 逻辑删除后
+      logic-delete-value: 0
+      # 逻辑删除前
+      logic-not-delete-value: 1

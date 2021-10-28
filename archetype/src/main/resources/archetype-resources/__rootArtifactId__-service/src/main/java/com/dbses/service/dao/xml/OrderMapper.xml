@@ -1,0 +1,34 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${package}.service.dao.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="${package}.service.entity.OrderEntity">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="order_status" jdbcType="TINYINT" property="orderStatus"/>
+        <result column="order_create_date" jdbcType="TIMESTAMP" property="orderCreateDate"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, order_status, order_create_date
+    </sql>
+    <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from tbl_order
+        where id = ${symbol_pound}{orderId}
+    </select>
+
+    <update id="updateByIdUseMybatis" parameterType="${package}.service.entity.OrderEntity">
+        UPDATE tbl_order
+        <set>
+            <if test="orderStatus != null">
+                order_status = ${symbol_pound}{orderStatus},
+            </if>
+            <if test="orderCreateDate != null">
+                order_create_date = ${symbol_pound}{orderCreateDate}
+            </if>
+        </set>
+        WHERE id = ${symbol_pound}{id}
+    </update>
+</mapper>
