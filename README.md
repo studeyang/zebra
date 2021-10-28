@@ -128,7 +128,7 @@ mvn archetype:generate    \
 
 # 04 | 工程维护
 
-[zebra 维护说明](docs/zebra 维护说明.md)
+[zebra 维护说明](docs/zebra%20维护说明.md)
 
 
 
