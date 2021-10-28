@@ -1,29 +1,134 @@
-# 01 | 项目介绍
+# 01 | 简介
 
-## 1.1 项目背景
+Zebra 是使用 Spring Boot + MyBatis Plus 搭建的一个脚手架项目，使用 Swagger 提供文档生成的能力。
 
-目前，各组工程结构分层方式不一，结构混乱。新建工程时，都是采用 copy 历史工程，并在上面进行修改。且工程结构知识传递没有形成统一认识，新员工都需要进行一对一的讲解。
+# 02 | 如何使用
 
-为了统一应用架构分层规范，提升开发效率，搭建该应用分层系统样例，并逐渐形成开思电商统一规范文档。
+### 下载骨架包
 
-## 1.2 项目描述
+使用 mvn 命令下载骨架包：
 
-Zebra 项目是四层应用架构分层方案的落地。功能包括：集成 CI/CD、依赖三方组件封装、代码驱动 API 接口文档生成、POM 文件初始化版本、工程命名规范、单元测试。
+```shell
+mvn dependency:get    \
+  -DremoteRepositories=http://dev.dbses.com/nexus/content/groups/public/    \
+  -DgroupId=com.dbses.open    \
+  -DartifactId=zebra-archetype    \
+  -Dversion=最新版本
+```
 
-# 02 | 功能简介
+参数说明：
 
-使用 Zebra，你可以快速地创建基础项目，创建方式支持以下几种。
+- remoteRepositories：骨架包仓库地址
+- groupId：骨架包 groupId
+- artifactId：骨架包 artifactId
+- version：骨架包版本号
 
-- 通过 maven 命令创建
-- 集成 IDEA 界面创建
-- 集成 Eclipse 界面创建
+或者在任一项目 pom 文件中添加依赖：
 
-# 03 | 技术简介
+```xml
+<dependency>
+  <groupId>com.dbses.open</groupId>
+  <artifactId>zebra-archetype</artifactId>
+  <version>最新版本</version>
+</dependency>
+```
 
-Zebra 是使用 Spring Boot + MyBatis 搭建的一个脚手架项目，使用 Swagger 提供文档生成的能力。
+下载完毕后删除依赖。
 
-# 04 | 提交建议
+### 注意事项
 
-为了让用户使用更加方便高效，您可通过 Issues 提出您的建议。
+下载下来的骨架包中包含 _remote.repositories 文件，通过方式一下载的该文件如下：
+
+```text
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Fri Nov 20 10:23:18 CST 2020
+zebra-archetype-0.0.3.pom>temp=
+zebra-archetype-0.0.3.jar>temp=
+```
+
+注意把 "temp" 去掉，否则会影响生成脚手架工程。即改为：
+
+```text
+zebra-archetype-0.0.3.pom>=
+zebra-archetype-0.0.3.jar>=
+```
+
+或者直接删除 _remote.repositories 文件。
+
+# 03 | 生成脚手架
+
+### 命令生成（推荐）
+
+使用 mvn 命令生成脚手架工程：
+
+```shell
+mvn archetype:generate    \
+  -DarchetypeGroupId=com.dbses.open    \
+  -DarchetypeArtifactId=zebra-archetype    \
+  -DarchetypeVersion=最新版本    \
+  -DgroupId=com.dbses.cloud    \
+  -DartifactId=shipment    \
+  -Dversion=1.0-SNAPSHOT    \
+  -Dpackage=com.dbses.cloud.shipment    \
+  -DinteractiveMode=false
+```
+
+参数说明：
+
+- archetypeGroupId：骨架包 groupId
+- archetypeArtifactId：骨架包 artifactId
+- archetypeVersion：骨架包版本号
+- groupId：生成工程的 groupId
+- artifactId：生成工程的 artifactId
+- version：生成工程的版本号
+- package：生成工程的包名（可选，默认跟 groupId 一样）
+- interactiveMode：交互模式
+
+您只需配置 groupId、artifactId、version、package 即可。
+
+### IDEA 界面生成
+
+步骤1：选择 File > New > Project 进入新建工程界面
+
+![image-20201120111111344](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20201120111111344.png)
+
+步骤2：点击 Add Archetype
+
+![image-20211028191354942](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20211028191354942.png)
+
+点击 OK，骨架添加成功。
+
+> 可以通过 UserArchetypes.xml 文件进行删除，文件位置：`~/.IntelliJIdea2019.3\system\Maven\Indices\UserArchetypes.xml`。
+
+步骤3：点击 Next，新建工程的后续步骤
+
+![image-20211028191414967](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20211028191414967.png)
+
+至此，脚手架工程新建完成。
+
+### Eclipse 界面生成
+
+步骤1：选择 File > New > Project 进入新建工程界面
+
+选择 Maven Project。
+
+![image-20201120141855052](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20201120141855052.png)
+
+步骤2：选择 workspace 位置
+
+![image-20201120142431577](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20201120142431577.png)
+
+步骤3：点击 Add Archetype
+
+![image-20211028191958274](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20211028191958274.png)
+
+步骤4：点击 Next，新建工程的后续步骤
+
+![image-20211028192234227](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20211028192234227.png)
+
+# 04 | 工程维护
+
+[zebra 维护说明](docs/zebra 维护说明.md)
+
 
 

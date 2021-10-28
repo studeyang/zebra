@@ -19,6 +19,7 @@
 # class/
 target/
 logs/
+/*.iml
 
 # virtual machine crash logs
 hs_err_pid*
