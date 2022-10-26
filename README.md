@@ -88,11 +88,7 @@ mvn archetype:generate    \
 
 ### IDEA 界面生成
 
-步骤1：选择 File > New > Project 进入新建工程界面
-
-![image-20201120111111344](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20201120111111344.png)
-
-步骤2：点击 Add Archetype
+点击 Add Archetype
 
 ![image-20211028191354942](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20211028191354942.png)
 
@@ -100,31 +96,11 @@ mvn archetype:generate    \
 
 > 可以通过 UserArchetypes.xml 文件进行删除，文件位置：`~/.IntelliJIdea2019.3\system\Maven\Indices\UserArchetypes.xml`。
 
-步骤3：点击 Next，新建工程的后续步骤
-
-![image-20211028191414967](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20211028191414967.png)
-
-至此，脚手架工程新建完成。
-
 ### Eclipse 界面生成
 
-步骤1：选择 File > New > Project 进入新建工程界面
-
-选择 Maven Project。
-
-![image-20201120141855052](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20201120141855052.png)
-
-步骤2：选择 workspace 位置
-
-![image-20201120142431577](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20201120142431577.png)
-
-步骤3：点击 Add Archetype
+点击 Add Archetype
 
 ![image-20211028191958274](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20211028191958274.png)
-
-步骤4：点击 Next，新建工程的后续步骤
-
-![image-20211028192234227](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20211028192234227.png)
 
 # 04 | 工程维护
 
