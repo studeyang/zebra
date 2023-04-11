@@ -1,0 +1,24 @@
+# Compiled class file
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# idea
+.project/
+.settings/
+*.iml
+.idea/
+
+# class/
+target/
+logs/
+
+# virtual machine crash logs
+hs_err_pid*

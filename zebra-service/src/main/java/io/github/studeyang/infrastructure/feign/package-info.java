@@ -1,0 +1,1 @@
+package io.github.studeyang.infrastructure.feign;

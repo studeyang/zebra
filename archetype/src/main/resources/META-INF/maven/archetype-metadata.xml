@@ -1,88 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="zebra"
+<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="icec-cloud-zebra"
     xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <fileSets>
     <fileSet filtered="true" encoding="UTF-8">
-      <directory>.idea/libraries</directory>
-      <includes>
-        <include>**/*.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory>archetype</directory>
-      <includes>
-        <include>**/*.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory>.idea/inspectionProfiles</directory>
-      <includes>
-        <include>**/*.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory>docs</directory>
-      <includes>
-        <include>**/*.md</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory>archetype/src</directory>
+      <directory>ops</directory>
       <includes>
         <include>**/*.groovy</include>
-        <include>**/*.java</include>
-        <include>**/*.sh</include>
-        <include>**/*.xml</include>
-        <include>**/*.md</include>
-        <include>**/*.yml</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory>.idea</directory>
-      <includes>
-        <include>**/*.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>.idea/sonarlint</directory>
-      <includes>
-        <include>**/*.pb</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>archetype/src</directory>
-      <includes>
-        <include>**/*.</include>
-        <include>**/*.txt</include>
-        <include>**/*.properties</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>.idea</directory>
-      <includes>
-        <include>**/*.name</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory></directory>
-      <includes>
-        <include>README.md</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
       <directory></directory>
       <includes>
         <include>.gitignore</include>
-        <include>LICENSE</include>
-        <include>zebra.iml</include>
+        <include>README.md</include>
       </includes>
     </fileSet>
   </fileSets>
   <modules>
     <module id="${rootArtifactId}-service" dir="__rootArtifactId__-service" name="${rootArtifactId}-service">
       <fileSets>
-        <fileSet filtered="true" encoding="UTF-8">
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
           <directory>src/main/java</directory>
           <includes>
             <include>**/*.java</include>
@@ -96,25 +34,25 @@
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8">
+          <directory>src/main/resources</directory>
+          <includes>
+            <include>**/*.txt</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
           <directory></directory>
           <includes>
-            <include>zebra-service.iml</include>
+            <include>Dockerfile</include>
           </includes>
         </fileSet>
       </fileSets>
     </module>
     <module id="${rootArtifactId}-spi" dir="__rootArtifactId__-spi" name="${rootArtifactId}-spi">
       <fileSets>
-        <fileSet filtered="true" encoding="UTF-8">
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
           <directory>src/main/java</directory>
           <includes>
             <include>**/*.java</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory></directory>
-          <includes>
-            <include>zebra-spi.iml</include>
           </includes>
         </fileSet>
       </fileSets>

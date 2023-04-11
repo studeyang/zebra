@@ -1,4 +1,4 @@
-# 01 | 工程结构说明
+## 一、工程结构说明
 
 ```
 zebra
@@ -27,7 +27,9 @@ zebra
 
 生成 maven archetype 骨架工程。
 
-# 02 | 生成 Maven Archetype
+
+
+## 二、生成 Maven Archetype
 
 ### 第一步：修改骨架模板
 
@@ -35,11 +37,15 @@ zebra
 
 ### 第二步：脚手架打包
 
-在项目目录`target/generated-sources/archetype`下执行：`mvn clean install`
+切换至 `{projectRoot}/target/generated-sources/archetype` 目录，将变更的内容同步至 `{projectRoot}/archetype` 。
+
+> 注意：`{projectRoot}/target/generated-sources/archetype` 生成了很多无关文件，这些文件不需要同步，还有文件中生成了错误的内容，需要手动纠正。
+
+然后在 `{projectRoot}/archetype` 目录下执行：`mvn clean install`
 
 ### 第三步：查看仓库
 
-查看仓库目录下`com/dbses/open/zebra-archetype/{version}`是否生成`maven-metadata-local.xml`
+查看仓库目录下`io/github/studeyang/zebra-archetype/{version}`是否生成`maven-metadata-local.xml`
 
 ### 第四步：archetype:crawl
 
@@ -51,11 +57,15 @@ zebra
 
 在`target/generated-sources/archetype`目录下执行：`mvn clean deploy`
 
-# 03 | 工程同步
+
+
+## 三、工程同步
 
 根据骨架模板同步修改 zebra-service、zebra-spi 工程代码。
 
-# 参考资料
+
+
+## 参考资料
 
 - https://blog.csdn.net/qq_37345604/article/details/100581940
 - https://www.cnblogs.com/xzhuo0827/p/12582154.html
