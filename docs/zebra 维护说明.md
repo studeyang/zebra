@@ -1,3 +1,7 @@
+# zebra 维护说明
+
+
+
 ## 一、工程结构说明
 
 ```
@@ -55,7 +59,7 @@ zebra
 
 ### 第五步：上传骨架包
 
-在`target/generated-sources/archetype`目录下执行：`mvn clean deploy`
+在`{projectRoot}/archetype`目录下执行：`mvn deploy`
 
 
 

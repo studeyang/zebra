@@ -4,7 +4,7 @@ Zebra 是使用 Spring Boot + MyBatis Plus 搭建的一个脚手架项目，使�
 
 应用架构如下图所示：
 
-![](https://technotes.oss-cn-shenzhen.aliyuncs.com/2021/images/image-20201106145911147.png)
+![image-20230412155423229](https://technotes.oss-cn-shenzhen.aliyuncs.com/2023/image-20230412155423229.png)
 
 # 二、快速开始
 

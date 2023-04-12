@@ -1,14 +1,10 @@
-# 一、简介
+# zebra 详细使用说明
 
-Zebra 是使用 Spring Boot + MyBatis Plus 搭建的一个脚手架项目，使用 Swagger 提供文档生成的能力。
 
-应用架构如下图所示：
 
-![](https://technotes.oss-cn-shenzhen.aliyuncs.com/2021/images/image-20201106145911147.png)
+## 一、下载骨架包
 
-# 二、快速开始
-
-### 下载骨架包
+### 使用命令下载
 
 使用 mvn 命令下载骨架包：
 
@@ -26,6 +22,8 @@ mvn dependency:get    \
 - groupId：骨架包 groupId
 - artifactId：骨架包 artifactId
 - version：骨架包版本号
+
+### 在 pom 文件中添加依赖
 
 或者在任一项目 pom 文件中添加依赖：
 
@@ -59,9 +57,11 @@ zebra-archetype-0.0.3.jar>=
 
 或者直接删除 _remote.repositories 文件。
 
-# 03 | 生成脚手架
 
-### 命令生成（推荐）
+
+## 二、使用脚手架
+
+### 使用命令（推荐）
 
 使用 mvn 命令生成脚手架工程：
 
@@ -90,7 +90,7 @@ mvn archetype:generate    \
 
 您只需配置 groupId、artifactId、version、package 即可。
 
-### IDEA 界面生成
+### 在 IDEA 中使用
 
 点击 Add Archetype
 
@@ -100,15 +100,10 @@ mvn archetype:generate    \
 
 > 可以通过 UserArchetypes.xml 文件进行删除，文件位置：`~/.IntelliJIdea2019.3\system\Maven\Indices\UserArchetypes.xml`。
 
-### Eclipse 界面生成
+### 在 Eclipse 中使用
 
 点击 Add Archetype
 
 ![image-20211028191958274](https://gitee.com/yanglu_u/ImgRepository/raw/master/image-20211028191958274.png)
-
-# 04 | 工程维护
-
-[zebra 维护说明](docs/zebra%20维护说明.md)
-
 
 
